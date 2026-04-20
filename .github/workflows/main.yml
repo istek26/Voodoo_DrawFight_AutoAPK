@@ -5,6 +5,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build Status
-        run: echo "Yeni APK basariyla tetiklendi!"
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Build Message
+        run: |
+          echo "Voodoo Prototip APK hazirlaniyor..."
+          echo "Bu asama tamamlandiginda 'index.html' icindeki fizik motoru paketlenmis olacak."
