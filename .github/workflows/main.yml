@@ -5,20 +5,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: HTML'i APK'ya Paketle
+      - name: Kodlari Al
+        uses: actions/checkout@v3
+      - name: Paketi Hazirla
         run: |
-          mkdir output
-          # Simülasyon: Gerçek bir APK paketleme aracı (Bubblewrap gibi) tetikleniyor
-          # Şimdilik sana indirilebilir bir HTML paketi (PWA) sunması için artifact oluşturuyoruz
-          cp index.html output/index.html
-          echo "APK Paketleme Hazir" > output/hazir.txt
-      - name: Dosyayi Sisteme Yukle
+          echo "Voodoo Prototip v1" > build_info.txt
+      - name: Dosyalari Disari Aktar
         uses: actions/upload-artifact@v3
         with:
-          name: Voodoo_Oyun_Paketi
-          path: output/
+          name: Voodoo_Oyun_Dosyalari
+          path: |
+            index.html
+            build_info.txt
